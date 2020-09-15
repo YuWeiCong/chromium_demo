@@ -1,0 +1,63 @@
+group("hope_demo") {
+  testonly = true
+  deps = [
+    ":mojo_message_pipe_single_process",
+    ":mojo_data_pipe_single_process",
+    ":mojo_share_buffer_single_process",
+    ":mojo_invitation_multiple_process",
+  ]
+}
+executable("mojo_message_pipe_single_process") {
+  testonly = true
+  sources = [
+    "mojo_message_pipe_single_process.cc",
+  ]
+
+  deps = [
+    "//base",
+    "//mojo/public",
+    "//mojo/core/embedder",
+  ]
+}
+
+executable("mojo_data_pipe_single_process") {
+  testonly = true
+  sources = [
+    "mojo_data_pipe_single_process.cc",
+  ]
+  defines = ["TOW_PHASE_WRITE"]
+
+  deps = [
+    "//base",
+    "//mojo/public",
+    "//mojo/core/embedder",
+  ]
+}
+
+executable("mojo_invitation_multiple_process")  {
+  testonly = true
+  sources = [
+    "mojo_invitation_multiple_process.cc",
+  ]
+  defines = ["TOW_PHASE_WRITE"]
+
+  deps = [
+    "//base",
+    "//mojo/public",
+    "//mojo/core/embedder",
+  ]
+}
+
+executable("mojo_share_buffer_single_process") {
+  testonly = true
+  sources = [
+    "mojo_share_buffer_single_process.cc",
+  ]
+  defines = ["TOW_PHASE_WRITE"]
+
+  deps = [
+    "//base",
+    "//mojo/public",
+    "//mojo/core/embedder",
+  ]
+}

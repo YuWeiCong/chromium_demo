@@ -1,0 +1,7 @@
+module demo.mojom;
+
+interface Logger {
+  Log(string message,string tag);
+};
+
+

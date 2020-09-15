@@ -1,0 +1,19 @@
+executable("demo_partition_alloc") {
+    testonly = true
+  
+    deps = [
+      "//base",
+      "//third_party/blink/renderer/platform/wtf",
+
+    ]
+    sources = [
+        "demo_partition_alloc.cc"
+    ]
+}
+
+group("memory") {
+    testonly = true
+    deps = [
+        ":demo_partition_alloc",
+    ]
+}

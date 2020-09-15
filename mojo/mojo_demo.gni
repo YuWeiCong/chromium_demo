@@ -1,0 +1,17 @@
+template("mojo_demo"){
+  executable(target_name) {
+    testonly = true
+    sources = invoker.sources
+    deps = [
+      "//base",
+      "//mojo/public",
+      "//mojo/core/embedder",
+    ]
+    if (defined(invoker.defines)) {
+      defines = invoker.defines
+    }
+    if (defined(invoker.deps)) {
+      deps += invoker.deps
+    }
+  }
+}

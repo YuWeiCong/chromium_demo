@@ -1,0 +1,6 @@
+group("mojo_demo") {
+  testonly = true
+  deps = [
+    "//hope_demo/mojo/cpp:cpp_mojo",
+  ]
+}
